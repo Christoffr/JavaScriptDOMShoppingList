@@ -3,7 +3,8 @@ console.log("Shoppinglist")
 
 let list = document.getElementById("list");
 
-list.appendChild(addListItem("healthy", list.children.length + 1, "Milk"));
+addToList("list", addListItem("healthy", list.children.length + 1, "Milk"));
+addToList("list", addListItem("unhealthy", list.children.length + 1, "Chocolate"));
 
 function addListItem(className, id, text) {
     let item = document.createElement("li");
@@ -12,4 +13,9 @@ function addListItem(className, id, text) {
     let textNode = document.createTextNode(text);
     item.appendChild(textNode);
     return item;
+}
+
+function addToList(listId, element) {
+    let list = document.getElementById(listId);
+    list.appendChild(element);
 }
