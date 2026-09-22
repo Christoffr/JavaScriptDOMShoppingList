@@ -6,6 +6,12 @@ let list = document.getElementById("list");
 addToList("list", addListItem("healthy", list.children.length + 1, "Milk"));
 addToList("list", addListItem("unhealthy", list.children.length + 1, "Chocolate"));
 createOrAddClass(list.children[0], "healthy");
+deleteListItem(1);
+
+function deleteListItem(id) {
+    let item = document.getElementById(id);
+    item.remove();
+}
 
 function createOrAddClass(element, value) {
     if (element.className == null) {
